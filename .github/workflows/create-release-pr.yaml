@@ -47,6 +47,5 @@ jobs:
         body: |
           Here is what a new entry in changelog would look like:
 
-            [`.changes/v${{ steps.latest.outputs.output }}.md`](.changes/v${{ steps.latest.outputs.output }}.md)
-          token: ${{ github.token }}
+            [`.changes/${{ steps.latest.outputs.output }}.md`](.changes/${{ steps.latest.outputs.output }}.md)
         token: ${{ github.token }}
