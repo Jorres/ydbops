@@ -45,3 +45,16 @@ jobs:
         branch: release/${{ steps.latest.outputs.output }}
         commit-message: Release ${{ steps.latest.outputs.output }}
         token: ${{ github.token }}
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v7
+      with:
+        title: Release ${{ steps.latest.outputs.output }}
+        branch: release/${{ steps.latest.outputs.output }}
+        commit-message: Release ${{ steps.latest.outputs.output }}
+        body: |
+          Here is what a new entry in changelog would look like:
+
+            [`.changes/v${{ steps.latest.outputs.output }}.md`](.changes/v${{ steps.latest.outputs.output }}.md)
+          token: ${{ github.token }}
+        token: ${{ github.token }}
